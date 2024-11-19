@@ -1,15 +1,19 @@
 /* CSS DOKUMENT K ÚPRAVĚ */
 .page {
-
+    padding:1em;
 }
 
 .page__header {
-
+    display:flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
     .page__content {
-
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:1em;
     }
     .search-list {
         /* width: 40%; */
@@ -17,35 +21,52 @@
     .playlist {
         /* vyplnit prostor */
         
+        flex-basis: 40%;
     }
 }
 
 .search-list__header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 
 }
 .search-list__content, .playlist__content {
-
+    display: flex;
+    flex-direction: column;
 }
 
 /* track-widget = komponenta položky playlistu  */
 .track-widget {
-    height: 4em;
+    height: 5em;
+    display:flex;
+    gap:1em;
+    align-items: center;
+    order:2;
 }
 
 .track-widget__thumbnail {
-
+  max-height: 4em;
+  
 }
 
 .track-widget__description {
-
+    display:flex;
+    flex-direction: column;
+    gap:0.5em;
+    flex-grow: 1;
+   
 }
 
 .track-widget__footer {
-
+    display:flex;
+    gap:0.5em;
+    align-items: center;
 }
 
 .track-widget--selected {
-
+    order:1;
 }
 
 .track-widget--selected::before {
@@ -57,23 +78,35 @@
 .bar {
     font-size: 0.9em;
     margin-top: 2em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
     .bar {
+        display: flex;
         gap: 10%;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 .bar__player {
-
+    flex-basis: 35%;
 }
 
 .player-controls {
-
+    display:flex;
+    gap:1em;
+    align-items: center;
+    justify-content: center;
 }
 
 .player-progress {
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1em;
 }
 
 .player-progress__line {
@@ -81,6 +114,7 @@
     height: 0.25em;
     background-color: var(--gray, gray);
     border-radius: 0.25em;
+    flex-grow: 2;
 }
 
 .bar__controls {
